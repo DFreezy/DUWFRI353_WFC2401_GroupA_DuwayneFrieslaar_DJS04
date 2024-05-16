@@ -1,7 +1,7 @@
 // Importing data and constants from data.js file
 import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
   // Function to create HTML elements with specified attributes and innerHTML
-  const createElement = (tag, attributes, innerHTML) => {
+  export const createElement = (tag, attributes, innerHTML) => {
     const element = document.createElement(tag); // Create the specified HTML element
     // Set attributes for the element
     Object.entries(attributes).forEach(([key, value]) =>
@@ -13,7 +13,7 @@ import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
 
 
   // Function to render dropdown options based on provided data
-  const renderOptions = (data, selector, defaultValue) => {
+  export const renderOptions = (data, selector, defaultValue) => {
     const fragment = document.createDocumentFragment(); // Create a document fragment to hold the options
     // Create a default option with the provided defaultValue
     fragment.appendChild(
@@ -28,7 +28,7 @@ import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
 
 
   // Function to render books with preview information
-  const renderBooks = (matches, limit) => {
+  export const renderBooks = (matches, limit) => {
     const fragment = document.createDocumentFragment(); // Create a document fragment to hold the book previews
     // Create a preview button for each book in the matches array
     matches.slice(0, limit).forEach(({ author, id, image, title }) => {
@@ -116,6 +116,7 @@ import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
     });
 
   let page = 1;
+  
   // Event listener for show more button
   document.querySelector("[data-list-button]").addEventListener("click", () => {
     const fragment = document.createDocumentFragment(); // Create a document fragment to hold the new previews
@@ -140,7 +141,7 @@ import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
 
   // Event listener for clicking on book previews
   document.querySelector("[data-list-items]").addEventListener("click", (event) => {
-      let node = event.target; // Get the clicked element
+    let node = event.target; // Get the clicked element
       // Traverse up the DOM tree until a preview button is found
       while (node && !node.dataset.preview) {
         node = node.parentNode;
@@ -159,3 +160,4 @@ import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
             authors[book.author]} (${new Date(book.published).getFullYear()})`;
           document.querySelector("[data-list-description]").innerText =book.description;
         }}});
+        
