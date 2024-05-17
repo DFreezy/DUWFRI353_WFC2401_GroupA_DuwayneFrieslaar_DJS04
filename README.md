@@ -1,1 +1,1 @@
-# DUWFRI353_WFC2401_GroupA_DuwayneFrieslaar_DJS04
+I found it very challenging, but yet I also learned alot from dividing the code into component which can be reused in future code. By completing this challenge I gained a great boost in confidence which i feel will prepare me even more for the real world.
