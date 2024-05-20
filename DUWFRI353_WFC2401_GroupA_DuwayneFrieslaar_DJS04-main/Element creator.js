@@ -10,9 +10,6 @@ class CustomHeader extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     // Setting up the HTML and styles for the header component within the shadow DOM
     this.shadowRoot.innerHTML = `
-      <style>
-        /* Include styles here */
-      </style>
       <header class="header">
         <div class="header__inner">
           <div class="header__logo">
